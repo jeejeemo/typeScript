@@ -4,14 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Typescript</title>
+    <script src="style.css"></script>
+    <title>Typescript Budget</title>
 </head>
 <body>
-    <script src="node_modules/systemjs/dist/system.js"></script>
+
+    <h1><span>Budget</span></h1>
+    <div id =" depenses">
+    </div>
+        <div id ="add"> + </div>
+        <form>
+        
+        <label>Raison</label>    <input type="text" name ="titre" id = "titre"/><br/>
+        <label>Valeur</label><input type="text" id = "valeur" name ="valeur"/><br/>
+        <label>Description</label><input type="textarea" name ="description" id = "description"/><br/>
+        <label>Catégories</label>
+        <select id ="categorie">
+            <!-- dynamique -->
+        </select>
+        <input type="submit" value ="valider">
+
     
-<!-- <script src="JS/JsonSerializable.js"></script>
-<script src="JS/Model.js"></script>
-<script src="JS/User.js"></script>   -->
+        </form>
+    
+    
+    
+
+
+
+<script src="node_modules/systemjs/dist/system.js"></script> 
+<script src="node_modules/jquery/dist/jquery.js"></script>  
 <script src="JS/main.js"></script> 
 <script>
     System.import('main')
