@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.2.15",
+    "gulp-livereload": "^3.8.1",
     "systemjs": "^0.20.19",
     "typescript": "^2.5.3"
   },

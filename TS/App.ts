@@ -1,7 +1,9 @@
 import { Spent } from "./Spent";
+import { Category } from './Category';
 
 
-export class App{
+export class App{    display: any;
+
     
     private budget :number;
     private spents: Spent[];
@@ -9,7 +11,6 @@ export class App{
     public $budget:JQuery<HTMLSpanElement>;
     public $add:JQuery<HTMLElement>;
     public $depenses: JQuery<HTMLElement>;
-    public $titre:JQuery<HTMLElement>;
     public $form:JQuery<HTMLElement>;
     public $raison:JQuery<HTMLElement>;
     public $valeur: JQuery<HTMLElement>;
@@ -17,14 +18,14 @@ export class App{
     public $category:JQuery<HTMLElement>;
    
 
-    constructor (budget: number ){
+    constructor (budget: number){
             this.budget = budget ;
-            this.spents = [];           
+            this.spents = [];
+             
+            this.$budget = $("h1 span");
             this.$add=$("#add");
             this.$depenses=$("#depenses");
-            this.$titre=$("#titre");
-            this.$budget = $("h1 span");
-            this.$form = $("#form");
+            this.$form = $("form");
             this.$raison = $("#raison");
             this.$valeur = $("#valeur");
             this.$description = $("#description");
@@ -35,6 +36,13 @@ export class App{
 
     init(): void {
         this.$budget.html(""+this.budget);
+        for (let item in Category  ){
+            let optionHtml: String = "<option value='"+ item +"'>"+item+ "</option>"
+            const option:JQuery = $( optionHtml );
+            this.$category.append( option );
+        }
+    
+
     }
 
     createSpent(): void {
@@ -44,9 +52,18 @@ export class App{
             this.$description.val() as string,
             this.$category.val() as string         
         );
+        this.budget -= spent.getValeur();
+        this.$budget.html(""+this.budget);
+        
         this.spents.push( spent );
-
         spent.display(this.$depenses);
     }
 
+    clearForm(): void{
+        this.$raison.val("");
+        this.$valeur.val("");
+        this.$description.val("")
+    }
+    
+    
 }

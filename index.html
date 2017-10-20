@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="style.css"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Typescript Budget</title>
 </head>
 <body>
@@ -15,15 +15,16 @@
         <div id ="add"> + </div>
         <form>
         
-        <label>Raison</label>    <input type="text" name ="titre" id = "titre"/><br/>
+        <label>Raison</label>    <input type="text" name ="raison" id = "raison"/><br/>
         <label>Valeur</label><input type="text" id = "valeur" name ="valeur"/><br/>
         <label>Description</label><input type="textarea" name ="description" id = "description"/><br/>
         <label>Catégories</label>
-        <select id ="categorie">
+        <select id ="category">
             <!-- dynamique -->
         </select>
+        <fieldset>
         <input type="submit" value ="valider">
-
+        </fieldset>
     
         </form>
     
